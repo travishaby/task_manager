@@ -1,0 +1,13 @@
+<div class = "container text-center padding-top">
+
+  <a class="btn btn-default" href="/tasks">Task Index</a><br/>
+
+  <form action="/tasks/<%= @task.id %>" method="post">
+    <p>Edit the task:</p>
+    <input type='hidden' name='_method' value='PUT'/><br/>
+    <input type='text' name='task[title]' value="<%= @task.title %>"/><br/>
+    <textarea name='task[description]'><%= @task.description %></textarea><br/>
+    <input type='submit'/>
+  </form>
+
+</div>

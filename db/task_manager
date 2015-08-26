@@ -1,12 +1,12 @@
 ---
 tasks:
-- id: 1
-  title: Play Civ
-  description: Play until your life falls apart around you.
-- id: 2
-  title: Play more civ
-  description: Don't stop
-- id: 3
-  title: Link
-  description: Make the links work!
-total: 3
+- id: 4
+  title: Chastise Bret
+  description: For being a pain in the ass
+- id: 5
+  title: Add counter reset
+  description: Because its really annoying that these numbers can't restart at 1
+- id: 6
+  title: But really, fuck these numbers
+  description: Ahhhhhhhhhhhh
+total: 6
