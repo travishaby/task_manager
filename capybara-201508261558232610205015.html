@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+
+  <body>
+    <div class = "container col-md-6 text-center">
+  <h1>All Tasks</h1>
+
+  
+    <h3>1: <a href="/tasks/1">Win at FF</a></h3>
+    <a class="btn btn-default" href="/tasks/1/edit" id='edit-task-1'>Edit</a><br/>
+    <form action="/tasks/1" method="POST" class="btn">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete"/>
+    </form>
+  
+</div>
+
+<div class = "container col-md-6 text-center padding-top">
+  <a class="btn btn-default well" href="/">Dashboard</a>
+</div>
+
+  </body>
+
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</html>

@@ -19,18 +19,8 @@ class TaskManager
     end
   end
 
-  def self.raw_tasks
-    database.transaction do
-      database['tasks'] || []
-    end
-  end
-
   def self.all
     raw_tasks.map { |data| Task.new(data) }
-  end
-
-  def self.raw_task(id)
-    raw_tasks.find { |task| task["id"] == id }
   end
 
   def self.find(id)
@@ -57,5 +47,19 @@ class TaskManager
       database['total'] = 0
     end
   end
+
+###Private Methods###
+
+  def self.raw_tasks
+    database.transaction do
+      database['tasks'] || []
+    end
+  end
+  private_class_method :raw_tasks
+
+  def self.raw_task(id)
+    raw_tasks.find { |task| task["id"] == id }
+  end
+  private_class_method :raw_task
 
 end
