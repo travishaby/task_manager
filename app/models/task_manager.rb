@@ -1,6 +1,3 @@
-require 'yaml/store'
-require 'models/task'
-
 class TaskManager
   def self.database
     @database ||= YAML::Store.new("db/task_manager")
