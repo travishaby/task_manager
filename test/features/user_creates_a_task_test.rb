@@ -26,9 +26,10 @@ class UserSeesAllTasksTest < FeatureTest
     visit "/tasks"
     assert page.has_content?('Win at FF')
 
-    click_on('edit-task-1')
+    task = TaskManager.all.last
+    click_on("edit-task-#{task.id}")
 
-    assert_equal '/tasks/1/edit', current_path
+    assert_equal "/tasks/#{task.id}/edit", current_path
   end
 
 end
