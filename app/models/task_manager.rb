@@ -14,14 +14,14 @@ class TaskManager
   def self.create_table
     database.create_table :tasks do
       primary_key :id
-      String :title
-      String :description
+      String      :title
+      String      :description
     end
   end
 
   def self.create(task)
     id = dataset.insert({"title"       => task[:title],
-                  "description" => task[:description]})
+                         "description" => task[:description]})
     find(id)
   end
 
@@ -35,9 +35,10 @@ class TaskManager
     Task.new(raw_task)
   end
 
-  def self.update(id, task)
-    dataset.where(id: id).update(title: task.title,
-                                               description: task.description)
+  def self.update(id, task_hash)
+    task = Task.new(task_hash)
+    dataset.where(id: id).update(title:       task.title,
+                                 description: task.description)
   end
 
   def self.delete(id)

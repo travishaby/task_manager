@@ -21,9 +21,10 @@ class TaskManagerTest < Minitest::Test
   def test_it_updates_a_task
     attributes = {:description => "This task", :title => "New task"}
     task1 = TaskManager.create(attributes)
-    task1.title = "an updated title"
 
-    TaskManager.update(task1.id, task1)
+    new_attributes = {:description => "This task", :title => "an updated title"}
+    TaskManager.update(task1.id, new_attributes)
+    task1 = TaskManager.find(task1.id)
 
     assert_equal "This task", task1.description
     assert_equal "an updated title", task1.title
